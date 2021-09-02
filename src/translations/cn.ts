@@ -19,9 +19,9 @@ export default {
   "Transaction Count": "Transaction Count",
   "Gas Usage": "Gas Usage",
   Uncles: "Uncles",
-  "Top Miners": "Top Miners",
-  "Top Miners by extraData": "Top Miners by extraData",
-  "Top Miners by Address": "Top Miners by Address",
+  "Top Collators": "Top Collators",
+  "Top Collators by extraData": "Top Collators by extraData",
+  "Top Collators by Address": "Top Collators by Address",
   // block list
   "Block Number": "区块编号",
   Hash: "哈希",
