@@ -19,17 +19,14 @@ import React, {
   useEffect,
 } from "react";
 import { Link as RouterLink, Router, Route, Switch } from "react-router-dom";
-import useDarkMode from "use-dark-mode";
 import "./App.css";
 import Address from "./containers/Address";
 import Block from "./containers/Block";
 import Dashboard from "./containers/Dashboard";
 import NodeView from "./containers/NodeView";
 import Transaction from "./containers/Transaction";
-import { darkTheme, lightTheme } from "./themes/jadeTheme";
-import Brightness3Icon from "@material-ui/icons/Brightness3";
+import { darkTheme } from "./themes/moonbeamTheme";
 import NotesIcon from "@material-ui/icons/Notes";
-import WbSunnyIcon from "@material-ui/icons/WbSunny";
 import CodeIcon from "@material-ui/icons/Code";
 import PlaylistAddIcon from "@material-ui/icons/PlaylistAdd";
 import useInterval from "use-interval";
@@ -46,7 +43,7 @@ import {
 import { createPreserveQueryHistory } from "./helpers/createPreserveHistory";
 import BlockRawContainer from "./containers/BlockRawContainer";
 import TransactionRawContainer from "./containers/TransactionRawContainer";
-import expeditionLogo from "./expedition.png";
+import moonbeamLogo from "./explorer.png";
 import MinerStatsPage from "./containers/MinerStatsPage";
 import { IChain as Chain } from "./models/chain";
 import useChainListStore from "./stores/useChainListStore";
@@ -61,9 +58,8 @@ const history = createPreserveQueryHistory(createBrowserHistory, [
 
 function App(props: any) {
   const { t } = useTranslation();
-  const darkMode = useDarkMode();
   const [search, setSearch] = useState();
-  const theme = darkMode.value ? darkTheme : lightTheme;
+  const theme = darkTheme;
 
   const [selectedChain, setSelectedChain] = useState<Chain>();
   const [chains, setChains] = useChainListStore<[Chain[], Dispatch<Chain[]>]>();
@@ -266,12 +262,12 @@ function App(props: any) {
                         alt="expedition-logo"
                         height="30"
                         style={{ marginRight: "10px" }}
-                        src={expeditionLogo}
+                        src={moonbeamLogo}
                       />
                     </Grid>
                     <Grid>
                       <Typography color="textSecondary" variant="h6">
-                        {t("Expedition")}
+                        {t("Moonbeam Basic Explorer")}
                       </Typography>
                     </Grid>
                   </Grid>
@@ -313,7 +309,7 @@ function App(props: any) {
                   <>
                     {query && query.rpcUrl && (
                       <Tooltip title={query.rpcUrl}>
-                        <IconButton >
+                        <IconButton>
                           <NetworkWifi />
                         </IconButton>
                       </Tooltip>
@@ -327,30 +323,22 @@ function App(props: any) {
                   </IconButton>
                 </Tooltip>
                 <LanguageMenu />
-                <Tooltip title={t("JSON-RPC API Documentation") as string}>
+                <Tooltip title={t("Moonbeam Documentation") as string}>
                   <IconButton
                     onClick={
-                      () =>
-                        window.open(
-                          "https://playground.open-rpc.org/?schemaUrl=https://raw.githubusercontent.com/etclabscore/ethereum-json-rpc-specification/master/openrpc.json"
-                        ) //tslint:disable-line
+                      () => window.open("https://docs.moonbeam.network") //tslint:disable-line
                     }
                   >
                     <NotesIcon />
                   </IconButton>
                 </Tooltip>
-                <Tooltip title={t("Expedition Github") as string}>
+                <Tooltip title={t("Github") as string}>
                   <IconButton
                     onClick={() =>
-                      window.open("https://github.com/xops/expedition")
+                      window.open("https://github.com/PureStake/expedition")
                     }
                   >
                     <CodeIcon />
-                  </IconButton>
-                </Tooltip>
-                <Tooltip title={t("Toggle Dark Mode") as string}>
-                  <IconButton onClick={darkMode.toggle}>
-                    {darkMode.value ? <Brightness3Icon /> : <WbSunnyIcon />}
                   </IconButton>
                 </Tooltip>
               </Grid>

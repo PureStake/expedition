@@ -14,8 +14,8 @@ const unit = require("ethjs-unit"); //tslint:disable-line
 interface IProps {
   match: {
     params: {
-      address: string,
-      block: string,
+      address: string;
+      block: string;
     };
   };
   history: History;
@@ -31,7 +31,7 @@ const Address: React.FC<IProps> = ({ match, history }) => {
   const blockNum = block === undefined ? blockNumber : parseInt(block, 10);
   const [transactions, setTransactions] = React.useState<Transaction[]>([]);
 
-  const from = Math.max(blockNum ? blockNum : 0 - 99, 0);
+  const from = Math.max((blockNum ? blockNum : 0) - 99, 0);
   const to = blockNum;
 
   React.useEffect(() => {
@@ -51,26 +51,37 @@ const Address: React.FC<IProps> = ({ match, history }) => {
       return;
     }
     const hexBlockNumber = `0x${blockNumber.toString(16)}`;
-    erpc.eth_getTransactionCount(address, hexBlockNumber).then((txCount) => {
-      if (txCount === null) { return; }
-      setTransactionCount(txCount);
-      return txCount;
-    }).then((txCountRes: string | undefined) => {
-      if (txCountRes) {
-        erpc.eth_getBalance(address, hexBlockNumber).then((b) => {
-          if (b === null) { return; }
-          setBalance(b);
-        });
-        erpc.eth_getCode(address, hexBlockNumber).then((c) => {
-          if (c === null) { return; }
-          setCode(c);
-        });
-      }
-    });
+    erpc
+      .eth_getTransactionCount(address, hexBlockNumber)
+      .then((txCount) => {
+        if (txCount === null) {
+          return;
+        }
+        setTransactionCount(txCount);
+        return txCount;
+      })
+      .then((txCountRes: string | undefined) => {
+        if (txCountRes) {
+          erpc.eth_getBalance(address, hexBlockNumber).then((b) => {
+            if (b === null) {
+              return;
+            }
+            setBalance(b);
+          });
+          erpc.eth_getCode(address, hexBlockNumber).then((c) => {
+            if (c === null) {
+              return;
+            }
+            setCode(c);
+          });
+        }
+      });
   }, [blockNumber, address, erpc]);
 
   React.useEffect(() => {
-    if (!erpc) { return; }
+    if (!erpc) {
+      return;
+    }
     getBlocks(from, to, erpc).then((blcks) => {
       const txes = _.flatMap(blcks, "transactions");
       const filteredTxes = _.filter(txes, (tx: any) => {
@@ -87,7 +98,11 @@ const Address: React.FC<IProps> = ({ match, history }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [from, to]);
 
-  if (transactionCount === undefined || balance === undefined || code === undefined) {
+  if (
+    transactionCount === undefined ||
+    balance === undefined ||
+    code === undefined
+  ) {
     return <CircularProgress />;
   }
   return (

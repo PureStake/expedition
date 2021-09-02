@@ -5,22 +5,22 @@ import React from "react";
 
 // const mergeChainSets = (c1: Chain[], c2: Chain[]) => uniqBy(c1.concat(c2), "name");
 
-export default function() {
+export default function () {
   const [chains, setChains] = React.useState<Chain[]>([
     {
-      name: "Ethereum Classic",
+      name: "Moonriver",
       network: "mainnet",
-      rpc: ["https://www.ethercluster.com/etc"],
+      rpc: ["https://rpc.moonriver.moonbeam.network"],
     },
     {
-      name: "Matic",
-      network: "mainnet",
-      rpc: ["https://rpc-mainnet.matic.network"],
-    },
-    {
-      name: "Matic - Mumbai",
+      name: "Moonbase Alpha",
       network: "testnet",
-      rpc: ["https://rpc-mumbai.matic.today"],
+      rpc: ["https://rpc.testnet.moonbeam.network"],
+    },
+    {
+      name: "Moonbeam Dev Node",
+      network: "testnet",
+      rpc: ["http://localhost:9933"],
     },
   ]);
 

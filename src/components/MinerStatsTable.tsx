@@ -1,12 +1,21 @@
 import React from "react";
-import { Table, TableRow, TableCell, TableHead, TableBody, Typography, Button } from "@material-ui/core";
+import {
+  Table,
+  TableRow,
+  TableCell,
+  TableHead,
+  TableBody,
+  Typography,
+  Button,
+} from "@material-ui/core";
 import { hexToString, hexToNumber } from "@etclabscore/eserialize";
 import { useHistory } from "react-router-dom";
 import _ from "lodash";
-import greenColor from "@material-ui/core/colors/green";
 
+import yellowColor from "@material-ui/core/colors/yellow";
 const blockTopMiners = (blocks: any[]) => {
-  const result = _(blocks).chain()
+  const result = _(blocks)
+    .chain()
     .countBy((b: any) => b.miner)
     .map((key: string, val: number) => ({
       address: val,
@@ -42,11 +51,10 @@ const MinerStatsTable: React.FC<IProps> = ({ blocks }) => {
   const groupedMiners = Object.assign({}, ...groupByMiner(blocks));
   return (
     <Table aria-label="simple table">
-      <TableHead >
+      <TableHead>
         <TableRow>
-          <TableCell>Blocks Mined</TableCell>
+          <TableCell>Blocks Produced</TableCell>
           <TableCell>Address</TableCell>
-          <TableCell>ExtraData</TableCell>
           <TableCell>Blocks</TableCell>
         </TableRow>
       </TableHead>
@@ -60,37 +68,45 @@ const MinerStatsTable: React.FC<IProps> = ({ blocks }) => {
             <TableCell colSpan={2}>
               <Table>
                 <TableBody>
-                  {_.map(groupedMiners[minerData.address], (bs: any[], key: string) => (
-                    <TableRow>
-                      <TableCell>{key}</TableCell>
-                      <TableCell colSpan={1}>
-                        {bs.map((block) => {
-                          const percentFull = (hexToNumber(block.gasUsed) / hexToNumber(block.gasLimit)) * 100;
-                          return (
-                            <Button
-                              variant="outlined"
-                              style={{
-                                margin: "3px",
-                                background: `linear-gradient(to right, ${greenColor[600]} 0% ${percentFull}%, transparent ${percentFull}% 100%)`,
-                              }}
-                              onClick={() => history.push(`/block/${block.hash}`)}
-                            >
-                              <Typography>
-                                {hexToNumber(block.number)}
-                              </Typography>
-                            </Button>
-                          );
-                        })}
-                      </TableCell>
-                    </TableRow>
-                  ))}
+                  {_.map(
+                    groupedMiners[minerData.address],
+                    (bs: any[], key: string) => (
+                      <TableRow>
+                        <TableCell>{key}</TableCell>
+                        <TableCell colSpan={1}>
+                          {bs.map((block) => {
+                            const percentFull =
+                              (hexToNumber(block.gasUsed) /
+                                hexToNumber(block.gasLimit)) *
+                              100;
+                            return (
+                              <Button
+                                variant="outlined"
+                                style={{
+                                  margin: "3px",
+                                  background: `linear-gradient(to right, ${yellowColor[600]} 0% ${percentFull}%, transparent ${percentFull}% 100%)`,
+                                }}
+                                onClick={() =>
+                                  history.push(`/block/${block.hash}`)
+                                }
+                              >
+                                <Typography>
+                                  {hexToNumber(block.number)}
+                                </Typography>
+                              </Button>
+                            );
+                          })}
+                        </TableCell>
+                      </TableRow>
+                    )
+                  )}
                 </TableBody>
               </Table>
             </TableCell>
           </TableRow>
         ))}
       </TableBody>
-    </Table >
+    </Table>
   );
 };
 

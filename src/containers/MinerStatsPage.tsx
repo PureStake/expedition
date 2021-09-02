@@ -22,8 +22,8 @@ const config = {
 interface IProps {
   match: {
     params: {
-      address: string,
-      block: string,
+      address: string;
+      block: string;
     };
   };
   history: History;
@@ -37,7 +37,7 @@ export default (props: IProps) => {
   const victoryTheme = getTheme(theme);
   const { block } = props.match.params;
   const blockNum = block !== undefined ? parseInt(block, 10) : blockNumber;
-  const from = Math.max(blockNum - 99, 0);
+  const from = Math.max(blockNum - 599, 0);
   const to = blockNum;
 
   React.useEffect(() => {
@@ -53,19 +53,17 @@ export default (props: IProps) => {
   }, [blockNumber, blockNum, props.history]);
 
   React.useEffect(() => {
-    if (!erpc) { return; }
-    getBlocks(
-      from,
-      to,
-      erpc,
-    ).then((bl) => {
+    if (!erpc) {
+      return;
+    }
+    getBlocks(from, to, erpc).then((bl) => {
       setBlocks(_.compact(bl));
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [from, to]);
 
   if (!blocks || blockNumber === undefined || blockNum > blockNumber) {
-    return (<CircularProgress />);
+    return <CircularProgress />;
   }
 
   return (
