@@ -167,7 +167,7 @@ export default (props: any) => {
           endIcon={<ArrowForwardIos />}
           onClick={() => props.history.push("/stats/miners")}
         >
-          More Stats
+          {t("More Stats")}
         </Button>
       </Grid>
       <br />

@@ -4,6 +4,7 @@ import { Button, Typography } from "@material-ui/core";
 import Editor from "@monaco-editor/react";
 import useDarkMode from "use-dark-mode";
 import { Transaction } from "@etclabscore/ethereum-json-rpc";
+import { useTranslation } from "react-i18next";
 
 interface IProps {
   tx: Transaction;
@@ -14,6 +15,7 @@ const TxRaw: React.FC<IProps> = (props) => {
   const history = useHistory();
   const darkMode = useDarkMode();
   const { tx, receipt } = props;
+  const { t } = useTranslation();
 
   return (
     <div style={{ margin: "0px -25px 0px -25px" }}>
@@ -22,9 +24,9 @@ const TxRaw: React.FC<IProps> = (props) => {
           history.push(`/tx/${tx.hash}`);
         }}
         style={{ position: "absolute", right: "10px", top: "75px", zIndex: 1 }}
-      >View Transaction</Button>
+      >{t("View Transaction")}</Button>
       <br />
-      <Typography variant="h5" gutterBottom style={{ marginLeft: "10px" }}>Transaction</Typography>
+      <Typography variant="h5" gutterBottom style={{ marginLeft: "10px" }}>{t("Transaction")}</Typography>
       <br />
       <Editor
         options={{
@@ -44,7 +46,7 @@ const TxRaw: React.FC<IProps> = (props) => {
         value={JSON.stringify(tx, null, 4)}
       />
       <br />
-      <Typography variant="h6" gutterBottom style={{ marginLeft: "10px" }}>Receipt</Typography>
+      <Typography variant="h6" gutterBottom style={{ marginLeft: "10px" }}>{t("Receipt")}</Typography>
       <br />
       <Editor
         options={{

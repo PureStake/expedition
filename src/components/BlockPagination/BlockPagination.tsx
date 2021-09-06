@@ -2,6 +2,7 @@
 import React from "react";
 import { Grid, IconButton, Typography } from "@material-ui/core";
 import { ArrowForwardIos, ArrowBackIos } from "@material-ui/icons";
+import { useTranslation } from "react-i18next";
 
 interface IProps {
   from: number;
@@ -14,6 +15,7 @@ interface IProps {
 }
 
 const BlockPagination: React.FC<IProps> = (props) => {
+  const { t } = useTranslation();
 
   return (
     <Grid container>
@@ -26,7 +28,7 @@ const BlockPagination: React.FC<IProps> = (props) => {
         </IconButton>
       </Grid>
       <Grid container justify="flex-end">
-        <Typography>Showing {(props.to - props.from) + 1} Block Range: <b>{props.to}</b> - {props.from}</Typography>
+        <Typography>{t("Showing")} {(props.to - props.from) + 1} {t("Block Range")}: <b>{props.to}</b> - {props.from}</Typography>
       </Grid>
     </Grid>
   );

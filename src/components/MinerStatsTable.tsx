@@ -11,6 +11,7 @@ import {
 import { hexToString, hexToNumber } from "@etclabscore/eserialize";
 import { useHistory } from "react-router-dom";
 import _ from "lodash";
+import { useTranslation } from "react-i18next";
 
 import yellowColor from "@material-ui/core/colors/yellow";
 const blockTopMiners = (blocks: any[]) => {
@@ -49,13 +50,14 @@ const MinerStatsTable: React.FC<IProps> = ({ blocks }) => {
   const history = useHistory();
   const topMiners = blockTopMiners(blocks);
   const groupedMiners = Object.assign({}, ...groupByMiner(blocks));
+  const { t } = useTranslation();
   return (
     <Table aria-label="simple table">
       <TableHead>
         <TableRow>
-          <TableCell>Blocks Produced</TableCell>
-          <TableCell>Address</TableCell>
-          <TableCell>Blocks</TableCell>
+          <TableCell>{t("Blocks Produced")}</TableCell>
+          <TableCell>{t("Address")}</TableCell>
+          <TableCell>{t("Blocks")}</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>

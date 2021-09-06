@@ -52,4 +52,5 @@ export default {
   Back: "Back",
   "Ethereum RPC": "Ethereum RPC",
   "Service Runner RPC": "Service Runner RPC",
+  "AddChainDialog": "To add a chain to the chain list and begin using Moonbeam Explorer with your own rpc provider, please enter the required fields below:"
 };
