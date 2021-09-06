@@ -33,8 +33,8 @@ export default {
   "Gas Usage": "Gas消耗",
   Uncles: "Uncles",
   "Top Collators": "收集人排序",
-  "Top Collators by extraData": "收集人排序依据ExtraData",
-  "Top Collators by Address": "收集人排序依据地址",
+  "Top Collators by extraData": "收集人根据额外数据排序",
+  "Top Collators by Address": "收集人根据地址排序",
   // block list
   "Block Number": "区块编号",
   "Blocks Produced": "区块生成",
