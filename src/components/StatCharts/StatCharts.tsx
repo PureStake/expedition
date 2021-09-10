@@ -74,7 +74,7 @@ const StatCharts: React.FC<IProps> = ({ blocks, victoryTheme }) => {
           </VictoryChart>
         </ChartCard>
       </Grid>
-      <Grid key="uncles" item xs={12} md={6} lg={3}>
+      <Grid key="collators" item xs={12} md={6} lg={3}>
         <ChartCard title={t("Gas Used per Tx")}>
           <VictoryChart
             height={config.chartHeight}

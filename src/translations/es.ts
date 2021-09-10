@@ -16,7 +16,6 @@ export default {
   "Hash Rate": "Block transactions / Block size",
   "Transaction Count": "Cantidad de Transacciones",
   "Gas Usage": "Uso Gas ",
-  Uncles: "Gas used / Block transactions",
   "Top Miners": "Top Mineros",
   "Top Miners by extraData": "Top Mineros by extraData",
   "Top Miners by Address": "Top Mineros by Address",

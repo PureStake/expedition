@@ -317,7 +317,7 @@ function App(props: any) {
                     {!query.rpcUrl && <CircularProgress />}
                   </>
                 )}
-                <Tooltip title={t("Add custom chain") as string}>
+                <Tooltip title={t("Add Custom Chain") as string}>
                   <IconButton onClick={openAddChainModal}>
                     <PlaylistAddIcon />
                   </IconButton>

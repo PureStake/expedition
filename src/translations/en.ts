@@ -16,7 +16,6 @@ export default {
   "Hash Rate": "Hash Rate",
   "Transaction Count": "Transaction Count",
   "Gas Usage": "Gas Usage",
-  Uncles: "Uncles",
   "Top Collators": "Top Collators",
   "Top Collators by extraData": "Top Collators by extraData",
   "Top Collators by Address": "Top Collators by Address",
@@ -52,5 +51,6 @@ export default {
   Back: "Back",
   "Ethereum RPC": "Ethereum RPC",
   "Service Runner RPC": "Service Runner RPC",
-  "AddChainDialog": "To add a chain to the chain list and begin using Moonbeam Explorer with your own rpc provider, please enter the required fields below:"
+  AddChainDialog:
+    "To add a chain to the chain list and begin using Moonbeam Explorer with your own rpc provider, please enter the required fields below:",
 };
