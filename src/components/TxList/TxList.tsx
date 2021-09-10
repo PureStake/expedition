@@ -4,6 +4,7 @@ import Link from "@material-ui/core/Link";
 
 import { Table, TableBody, TableCell, TableHead, TableRow } from "@material-ui/core";
 import { hexToNumber } from "@etclabscore/eserialize";
+import { useTranslation } from "react-i18next";
 
 function TxListItem({ tx, showblockNumber }: { tx: any, showblockNumber?: boolean }) {
   return (
@@ -56,15 +57,16 @@ export interface ITxListProps {
 }
 
 function TxList(props: ITxListProps) {
+  const { t } = useTranslation();
   return (
     <Table>
       <TableHead>
         <TableRow>
-          {props.showBlockNumber && <TableCell>Block Number</TableCell>}
-          <TableCell>Hash</TableCell>
-          <TableCell>From</TableCell>
-          <TableCell>To</TableCell>
-          <TableCell>Index</TableCell>
+          {props.showBlockNumber && <TableCell>{t("Block Number")}</TableCell>}
+          <TableCell>{t("Hash")}</TableCell>
+          <TableCell>{t("From")}</TableCell>
+          <TableCell>{t("To")}</TableCell>
+          <TableCell>{t("Index")}</TableCell>
         </TableRow>
       </TableHead>
 

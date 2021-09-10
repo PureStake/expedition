@@ -24,7 +24,7 @@ function BlockView(props: any) {
   const { t } = useTranslation();
 
   if (!block) {
-    return <div>Loading...</div>;
+    return <div>{t("Loading")}...</div>;
   }
 
   const {
@@ -52,7 +52,7 @@ function BlockView(props: any) {
         }}
         style={{ position: "absolute", right: "10px", top: "75px" }}
       >
-        View Raw
+        {t("View Raw")}
       </Button>
       <Table>
         <TableBody>

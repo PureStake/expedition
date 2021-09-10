@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { Button } from "@material-ui/core";
 import Editor from "@monaco-editor/react";
 import useDarkMode from "use-dark-mode";
+import { useTranslation } from "react-i18next";
 
 interface IProps {
   block: any;
@@ -12,6 +13,7 @@ const BlockRaw: React.FC<IProps> = (props) => {
   const history = useHistory();
   const darkMode = useDarkMode();
   const { block } = props;
+  const { t } = useTranslation();
 
   return (
     <div style={{ margin: "0px -25px 0px -25px" }}>
@@ -20,7 +22,7 @@ const BlockRaw: React.FC<IProps> = (props) => {
           history.push(`/block/${block.hash}`);
         }}
         style={{ position: "absolute", right: "10px", top: "75px", zIndex: 1 }}
-      >View Block</Button>
+      >{t("View Block")}</Button>
       <Editor
         options={{
           minimap: {

@@ -28,8 +28,8 @@ function TxView(props: ITxViewProps) {
           history.push(`/tx/${tx.hash}/raw`);
         }}
         style={{ position: "absolute", right: "10px", top: "75px" }}
-      >View Raw</Button>
-      <Typography variant="h6">Transaction</Typography>
+      >{t("View Raw")}</Button>
+      <Typography variant="h6">{t("Transaction")}</Typography>
       <Table>
         <TableBody>
           <TableRow>
@@ -63,12 +63,12 @@ function TxView(props: ITxViewProps) {
 
           <TableRow>
             <TableCell>{t("Gas Price")}</TableCell>
-            <TableCell>{hexToNumber(tx.gasPrice)} Wei</TableCell>
+            <TableCell>{hexToNumber(tx.gasPrice)}{t("Wei")}</TableCell>
           </TableRow>
 
           <TableRow>
             <TableCell>{t("Value")}</TableCell>
-            <TableCell>{unit.fromWei(tx.value, "ether")} Ether</TableCell>
+            <TableCell>{unit.fromWei(tx.value, "ether")}{t("Ether")}</TableCell>
           </TableRow>
 
           <TableRow>

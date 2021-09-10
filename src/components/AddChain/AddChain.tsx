@@ -6,6 +6,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
+import { useTranslation } from "react-i18next";
 
 import { IChain as Chain } from "../../models/chain";
 
@@ -19,6 +20,7 @@ const AddChain: React.FC<IProps> = (props: IProps) => {
   const [name, setName] = React.useState<string>();
   const [network, setNetwork] = React.useState<string>("mainnet");
   const [rpc, setRpc] = React.useState<string>();
+  const { t } = useTranslation();
 
   const handleSubmit = () => {
     if (name === undefined || network === undefined || rpc === undefined) { return; }
@@ -30,17 +32,16 @@ const AddChain: React.FC<IProps> = (props: IProps) => {
   return (
     <>
       <Dialog open={props.open} onClose={props.onCancel} aria-labelledby="form-dialog-title">
-        <DialogTitle id="form-dialog-title">Add Chain</DialogTitle>
+        <DialogTitle id="form-dialog-title">{t("Add Chain")}</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            To add a chain to the chain list and begin using Expedition with your own
-            rpc provider, please enter the required fields below:
+            {t("AddChainDialog")}
           </DialogContentText>
           <TextField
             autoFocus
             margin="dense"
             id="name"
-            label="Chain Name"
+            label={t("Chain Name")}
             type="text"
             fullWidth
             onChange={(v) => setName(v.target.value) }
@@ -48,7 +49,7 @@ const AddChain: React.FC<IProps> = (props: IProps) => {
           <TextField
             margin="dense"
             id="network"
-            label="Network"
+            label={t("Network")}
             defaultValue="mainnet"
             type="text"
             fullWidth
@@ -57,7 +58,7 @@ const AddChain: React.FC<IProps> = (props: IProps) => {
           <TextField
             margin="dense"
             id="rpcs"
-            label="RPC endpoint"
+            label={t("RPC Endpoint")}
             type="text"
             fullWidth
             onChange={(v) => setRpc(v.target.value) }
@@ -65,10 +66,10 @@ const AddChain: React.FC<IProps> = (props: IProps) => {
         </DialogContent>
         <DialogActions>
           <Button onClick={props.onCancel} color="primary">
-            Cancel
+          {t("Cancel")}
           </Button>
           <Button onClick={handleSubmit} color="primary">
-            Save
+          {t("Save")}
           </Button>
         </DialogActions>
       </Dialog>
