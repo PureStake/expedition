@@ -2,24 +2,26 @@
 // import { uniqBy } from "lodash";
 import { IChain as Chain } from "../models/chain";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 // const mergeChainSets = (c1: Chain[], c2: Chain[]) => uniqBy(c1.concat(c2), "name");
 
 export default function () {
+  const { t } = useTranslation();
   const [chains, setChains] = React.useState<Chain[]>([
     {
       name: "Moonriver",
-      network: "mainnet",
+      network: t("mainnet"),
       rpc: ["https://rpc.moonriver.moonbeam.network"],
     },
     {
       name: "Moonbase Alpha",
-      network: "testnet",
+      network: t("testnet"),
       rpc: ["https://rpc.testnet.moonbeam.network"],
     },
     {
       name: "Moonbeam Dev Node",
-      network: "testnet",
+      network: t("testnet"),
       rpc: ["http://localhost:9933"],
     },
   ]);

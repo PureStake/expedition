@@ -31,7 +31,7 @@ export default {
   "Hash Rate": "哈希率",
   "Transaction Count": "交易数量",
   "Gas Usage": "Gas消耗",
-  Uncles: "Uncles",
+  Uncles: "叔块",
   "Top Collators": "收集人排序",
   "Top Collators by extraData": "收集人根据额外数据排序",
   "Top Collators by Address": "收集人根据地址排序",
@@ -88,5 +88,8 @@ export default {
   "RPC Endpoint" : "RPC端点",
   "Network" : "网络",
   "View Block" : "查看区块",
-  "Loading" : "加载中"
+  "Loading" : "加载中",
+  "Author" : "签署人",
+  "mainnet" : "主网",
+  "testnet" : "测试网"
 };
