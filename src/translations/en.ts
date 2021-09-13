@@ -4,9 +4,7 @@ export default {
   "Change Language": "Change Language",
   "Enter an Address, Transaction Hash or Block Number":
     "🔎 Enter an Address, Transaction Hash or Block Number",
-  "JSON-RPC API Documentation": "JSON-RPC API Documentation",
   Github: "Github",
-  "Toggle Dark Mode": "Toggle Dark Mode",
   "Block Height": "Block Height",
   "Chain ID": "Chain ID",
   Syncing: "Syncing",
@@ -25,9 +23,7 @@ export default {
   Transactions: "Transactions",
   Number: "Number",
   ParentHash: "ParentHash",
-  Miner: "Miner",
   Nonce: "Nonce",
-  Difficulty: "Difficulty",
   "Extra Data": "Extra Data",
   "State Root": "State Root",
   "Transaction Root": "Transaction Root",
@@ -42,8 +38,8 @@ export default {
   "Transaction Index": "Transaction Index",
   "Receipt Status": "Receipt Status",
   "Receipt Logs": "Receipt Logs",
-  "No Transactions for this block range.":
-    "No Transactions for this block range.",
+  "No transactions for this block range":
+    "No transactions for this block range",
   Address: "Address",
   Balance: "Balance",
   Code: "Code",

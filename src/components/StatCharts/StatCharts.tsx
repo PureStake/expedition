@@ -53,7 +53,7 @@ const StatCharts: React.FC<IProps> = ({ blocks, victoryTheme }) => {
   return (
     <Grid item container>
       <Grid key="txChart" item xs={12} md={6} lg={3}>
-        <ChartCard title={t("Transaction count")}>
+        <ChartCard title={t("Transaction Count")}>
           <VictoryChart
             height={config.chartHeight}
             width={config.chartWidth}
