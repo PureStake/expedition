@@ -15,12 +15,14 @@ export default function () {
       rpc: ["https://rpc.moonriver.moonbeam.network"],
     },
     {
-      name: "Moonbase Alpha",
+      name: "MoonbaseAlpha",
+      displayName: "Moonbase Alpha",
       network: t("testnet"),
       rpc: ["https://rpc.testnet.moonbeam.network"],
     },
     {
-      name: "Moonbeam Dev Node",
+      name: "MoonbeamDevNode",
+      displayName: "Moonbeam Dev Node",
       network: t("testnet"),
       rpc: ["http://localhost:9933"],
     },

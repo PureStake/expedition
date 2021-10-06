@@ -32,7 +32,9 @@ const ChainDropdown: React.FC<IProps> = (props: IProps) => {
   return (
     <>
       <Tooltip title={t("Switch Network") as string}>
-        <Button onClick={handleClick}>{selected.name}</Button>
+        <Button onClick={handleClick}>
+          {selected.displayName ? selected.displayName : selected.name}
+        </Button>
       </Tooltip>
 
       <Menu
@@ -54,7 +56,9 @@ const ChainDropdown: React.FC<IProps> = (props: IProps) => {
             onClick={() => handleMenuItemClick(chain)}
           >
             <div>
-              <Typography variant="body1">{chain.name}</Typography>
+              <Typography variant="body1">
+                {chain.displayName ? chain.displayName : chain.name}
+              </Typography>
               <Typography variant="caption">{chain.network}</Typography>
             </div>
           </MenuItem>
