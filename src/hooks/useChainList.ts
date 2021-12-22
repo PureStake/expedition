@@ -4,21 +4,41 @@ import { IChain as Chain } from "../models/chain";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-// const mergeChainSets = (c1: Chain[], c2: Chain[]) => uniqBy(c1.concat(c2), "name");
+declare var process: {
+  env: {
+    REACT_APP_MOONBASEAPI: string;
+    REACT_APP_MOONRIVERAPI: string;
+    REACT_APP_MOONBEAMAPI: string;
+  };
+};
 
 export default function () {
   const { t } = useTranslation();
   const [chains, setChains] = React.useState<Chain[]>([
     {
+      name: "Moonbeam",
+      network: t("mainnet"),
+      rpc: [
+        "https://moonbeam-api.bwarelabs.com/" +
+          process.env.REACT_APP_MOONBEAMAPI,
+      ],
+    },
+    {
       name: "Moonriver",
       network: t("mainnet"),
-      rpc: ["https://rpc.moonriver.moonbeam.network"],
+      rpc: [
+        "https://moonriver-api.bwarelabs.com/" +
+          process.env.REACT_APP_MOONRIVERAPI,
+      ],
     },
     {
       name: "MoonbaseAlpha",
       displayName: "Moonbase Alpha",
       network: t("testnet"),
-      rpc: ["https://rpc.testnet.moonbeam.network"],
+      rpc: [
+        "https://moonbase-alpha-api.bwarelabs.com/" +
+          process.env.REACT_APP_MOONBASEAPI,
+      ],
     },
     {
       name: "MoonbeamDevNode",
