@@ -23,7 +23,10 @@ export default function () {
     {
       name: "Moonriver",
       network: t("mainnet"),
-      rpc: ["https://rpc.moonriver.moonbeam.network"],
+      rpc: [
+        "https://moonriver-api.bwarelabs.com/" +
+          process.env.REACT_APP_MOONRIVERAPI,
+      ],
     },
     {
       name: "MoonbaseAlpha",
