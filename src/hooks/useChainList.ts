@@ -38,7 +38,7 @@ export default function () {
       name: "MoonbeamDevNode",
       displayName: "Moonbeam Dev Node",
       network: t("testnet"),
-      rpc: ["http://localhost:9933"],
+      rpc: ["http://localhost:9944"],
     },
   ]);
 
