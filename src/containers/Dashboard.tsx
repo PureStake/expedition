@@ -148,7 +148,7 @@ export default (props: any) => {
           <Grid key="gasPrice" item>
             <ChartCard title={t("Gas Price")}>
               <Typography variant="h4">
-                {weiToGwei(hexToNumber(gasPrice))} Gwei
+                {weiToGwei(hexToNumber(gasPrice)).toFixed(2)} Gwei
               </Typography>
             </ChartCard>
           </Grid>

@@ -32,7 +32,7 @@ import PlaylistAddIcon from "@material-ui/icons/PlaylistAdd";
 import useInterval from "use-interval";
 import ETHJSONSpec from "@etclabscore/ethereum-json-rpc-specification/openrpc.json";
 import { useTranslation } from "react-i18next";
-import LanguageMenu from "./containers/LanguageMenu";
+//import LanguageMenu from "./containers/LanguageMenu";
 import { createBrowserHistory } from "history";
 import ChainDropdown from "./components/ChainDropdown/ChainDropdown";
 import {
@@ -273,7 +273,7 @@ function App(props: any) {
                   </Grid>
                 </Link>
               </Grid>
-              <Grid item md={6} xs={12}>
+              <Grid item md={5} xs={12}>
                 <InputBase
                   placeholder={t(
                     "Enter an Address, Transaction Hash or Block Number"
@@ -322,7 +322,7 @@ function App(props: any) {
                     <PlaylistAddIcon />
                   </IconButton>
                 </Tooltip>
-                <LanguageMenu />
+                {/* <LanguageMenu /> */}
                 <Tooltip title={t("Moonbeam Documentation") as string}>
                   <IconButton
                     onClick={
@@ -335,7 +335,7 @@ function App(props: any) {
                 <Tooltip title={t("Github") as string}>
                   <IconButton
                     onClick={() =>
-                      window.open("https://github.com/PureStake/expedition")
+                      window.open("https://github.com/papermoonio/expedition")
                     }
                   >
                     <CodeIcon />
