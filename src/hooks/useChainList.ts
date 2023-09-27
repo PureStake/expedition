@@ -18,11 +18,6 @@ export default function () {
       network: t("testnet"),
       rpc: ["https://fraa-dancebox-3001-rpc.a.dancebox.tanssi.network/"],
     },
-    {
-      name: "Stagebox EVM ContainerChain",
-      network: t("testnet"),
-      rpc: ["https://fraa-stagebox-2002-rpc.a.stagenet.tanssi.network"],
-    },
   ]);
 
   // uncomment once we add 'chain list provider' concept. This list blows.
