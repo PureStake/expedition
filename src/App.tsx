@@ -32,7 +32,7 @@ import PlaylistAddIcon from "@material-ui/icons/PlaylistAdd";
 import useInterval from "use-interval";
 import ETHJSONSpec from "@etclabscore/ethereum-json-rpc-specification/openrpc.json";
 import { useTranslation } from "react-i18next";
-import LanguageMenu from "./containers/LanguageMenu";
+//import LanguageMenu from "./containers/LanguageMenu";
 import { createBrowserHistory } from "history";
 import ChainDropdown from "./components/ChainDropdown/ChainDropdown";
 import {
