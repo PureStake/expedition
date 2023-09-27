@@ -48,5 +48,5 @@ export default {
   "Ethereum RPC": "Ethereum RPC",
   "Service Runner RPC": "Service Runner RPC",
   AddChainDialog:
-    "To add a chain to the chain list and begin using Moonbeam Explorer with your own rpc provider, please enter the required fields below:",
+    "To add a chain to the chain list and begin using Tanssi Dancebox EVM ContainerChain Explorer with your own rpc provider, please enter the required fields below:",
 };

@@ -170,7 +170,6 @@ export default (props: any) => {
           {t("More Stats")}
         </Button>
       </Grid>
-      <br />
 
       <BlockListContainer
         from={Math.max(blockNumber - 14, 0)}

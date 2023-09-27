@@ -14,8 +14,8 @@ export const darkTheme = responsiveFontSizes(
     palette: {
       type: "dark",
       primary: {
-        light: "#53CBC9",
-        main: "#EA5AA2",
+        light: "#189B9B",
+        main: "#FF8055",
         dark: "#1E0E2D",
         contrastText: "#fff",
       },
@@ -26,7 +26,7 @@ export const darkTheme = responsiveFontSizes(
     overrides: {
       MuiAppBar: {
         root: {
-          background: "#EA5AA2",
+          background: "#FF8055",
         },
       },
       MuiTextField: {
@@ -38,13 +38,13 @@ export const darkTheme = responsiveFontSizes(
       MuiPaper: {
         root: {
           overflow: "visible !important",
-          color: "#EA5AA2",
+          color: "#FF8055",
           backgroundColor: "#000000",
         },
       },
       MuiTable: {
         root: {
-          color: "#53CBC9 visible !important",
+          color: "#189B9B visible !important",
         },
       },
       MuiMenuItem: {
@@ -54,23 +54,23 @@ export const darkTheme = responsiveFontSizes(
       },
       MuiLink: {
         root: {
-          color: "linear-gradient(45deg, #E1147B 30%, #EA5AA2  90%)",
+          color: "linear-gradient(45deg, #E1147B 30%, #FF8055  90%)",
         },
       },
       MuiTouchRipple: {
         root: {
-          color: "#53CBC9 visible !important",
+          color: "#189B9B visible !important",
         },
       },
       MuiButton: {
         root: {
-          color: "#53CBC9  !important",
+          color: "#189B9B  !important",
         },
       },
       MuiTypography: {
         root: {
-          outlineStyle: "#53CBC9",
-          color: "#53CBC9",
+          outlineStyle: "#189B9B",
+          color: "#189B9B",
         },
       },
     },

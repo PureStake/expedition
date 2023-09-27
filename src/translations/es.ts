@@ -1,7 +1,7 @@
 //THIS FILE HAS THE MOST COMPLETE LIST OF TRANSLATABLE STRINGS
 
 export default {
-  "Moonbeam Basic Explorer": "Moonbeam: Explorador Bloques",
+  "Tanssi Basic EVM Explorer": "Tanssi Basic EVM Explorer",
   // Moment integration
   "Timestamp Date": "{{date, date}}",
   // App Bar
@@ -75,7 +75,7 @@ export default {
   Receipt: "Recibo",
   "Switch Network": "Cambiar Red",
   "Add Custom Chain": "Agregar Red Custom",
-  "Moonbeam Documentation": "Documentación Moonbeam",
+  "Tanssi Documentation": "Documentación Tanssi",
   Cancel: "Cancelar",
   Save: "Guardar",
   AddChainDialog:

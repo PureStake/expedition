@@ -6,9 +6,7 @@ import { useTranslation } from "react-i18next";
 
 declare var process: {
   env: {
-    REACT_APP_MOONBASEAPI: string;
-    REACT_APP_MOONRIVERAPI: string;
-    REACT_APP_MOONBEAMAPI: string;
+    REACT_APP_DANCEBOXEVMAPI: string;
   };
 };
 
@@ -16,29 +14,14 @@ export default function () {
   const { t } = useTranslation();
   const [chains, setChains] = React.useState<Chain[]>([
     {
-      name: "Moonbeam",
-      network: t("mainnet"),
-      rpc: ["https://rpc.api.moonbeam.network"],
-    },
-    {
-      name: "Moonriver",
-      network: t("mainnet"),
-      rpc: [
-        "https://moonriver-api.bwarelabs.com/" +
-          process.env.REACT_APP_MOONRIVERAPI,
-      ],
-    },
-    {
-      name: "MoonbaseAlpha",
-      displayName: "Moonbase Alpha",
+      name: "Dancebox EVM ContainerChain",
       network: t("testnet"),
-      rpc: ["https://rpc.api.moonbase.moonbeam.network"],
+      rpc: ["https://fraa-dancebox-3001-rpc.a.dancebox.tanssi.network/"],
     },
     {
-      name: "MoonbeamDevNode",
-      displayName: "Moonbeam Dev Node",
+      name: "Stagebox EVM ContainerChain",
       network: t("testnet"),
-      rpc: ["http://localhost:9944"],
+      rpc: ["https://fraa-stagebox-2002-rpc.a.stagenet.tanssi.network"],
     },
   ]);
 

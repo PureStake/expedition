@@ -1,7 +1,7 @@
 //THIS FILE HAS THE MOST COMPLETE LIST OF TRANSLATABLE STRINGS
 
 export default {
-  "Moonbeam Basic Explorer": "Moonbeam简易浏览器",
+  "Tanssi Basic EVM Explorer": "Tanssi EVM 简易浏览器",
   // Moment integration
   "Timestamp Date": "{{date, date}}",
   // App Bar
@@ -75,7 +75,7 @@ export default {
   Receipt: "收据",
   "Switch Network": "切换网络",
   "Add Custom Chain": "加自定义链",
-  "Moonbeam Documentation": "Moonbeam开发者文档",
+  "Tanssi Documentation": "Tanssi开发者文档",
   Cancel: "取消",
   Save: "保存",
   AddChainDialog: "请使用一下表格来添加自定义区块链的RPC端点",

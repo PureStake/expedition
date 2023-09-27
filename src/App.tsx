@@ -25,7 +25,7 @@ import Block from "./containers/Block";
 import Dashboard from "./containers/Dashboard";
 import NodeView from "./containers/NodeView";
 import Transaction from "./containers/Transaction";
-import { darkTheme } from "./themes/moonbeamTheme";
+import { darkTheme } from "./themes/tanssiTheme";
 import NotesIcon from "@material-ui/icons/Notes";
 import CodeIcon from "@material-ui/icons/Code";
 import PlaylistAddIcon from "@material-ui/icons/PlaylistAdd";
@@ -267,13 +267,13 @@ function App(props: any) {
                     </Grid>
                     <Grid>
                       <Typography color="textSecondary" variant="h6">
-                        {t("Moonbeam Basic Explorer")}
+                        {t("Tanssi Basic EVM Explorer")}
                       </Typography>
                     </Grid>
                   </Grid>
                 </Link>
               </Grid>
-              <Grid item md={6} xs={12}>
+              <Grid item md={5} xs={10}>
                 <InputBase
                   placeholder={t(
                     "Enter an Address, Transaction Hash or Block Number"
@@ -322,11 +322,11 @@ function App(props: any) {
                     <PlaylistAddIcon />
                   </IconButton>
                 </Tooltip>
-                <LanguageMenu />
-                <Tooltip title={t("Moonbeam Documentation") as string}>
+                {/* <LanguageMenu /> */}
+                <Tooltip title={t("Tanssi Documentation") as string}>
                   <IconButton
                     onClick={
-                      () => window.open("https://docs.moonbeam.network") //tslint:disable-line
+                      () => window.open("https://docs.tanssi.network") //tslint:disable-line
                     }
                   >
                     <NotesIcon />
@@ -335,7 +335,7 @@ function App(props: any) {
                 <Tooltip title={t("Github") as string}>
                   <IconButton
                     onClick={() =>
-                      window.open("https://github.com/PureStake/expedition")
+                      window.open("https://github.com/papermoonio/expedition")
                     }
                   >
                     <CodeIcon />

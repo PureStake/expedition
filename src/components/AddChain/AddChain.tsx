@@ -18,12 +18,14 @@ interface IProps {
 
 const AddChain: React.FC<IProps> = (props: IProps) => {
   const [name, setName] = React.useState<string>();
-  const [network, setNetwork] = React.useState<string>("mainnet");
+  const [network, setNetwork] = React.useState<string>("testnet");
   const [rpc, setRpc] = React.useState<string>();
   const { t } = useTranslation();
 
   const handleSubmit = () => {
-    if (name === undefined || network === undefined || rpc === undefined) { return; }
+    if (name === undefined || network === undefined || rpc === undefined) {
+      return;
+    }
 
     const chain: Chain = { name, network, rpc: [rpc] };
     props.onSubmit(chain);
@@ -31,12 +33,14 @@ const AddChain: React.FC<IProps> = (props: IProps) => {
 
   return (
     <>
-      <Dialog open={props.open} onClose={props.onCancel} aria-labelledby="form-dialog-title">
+      <Dialog
+        open={props.open}
+        onClose={props.onCancel}
+        aria-labelledby="form-dialog-title"
+      >
         <DialogTitle id="form-dialog-title">{t("Add Chain")}</DialogTitle>
         <DialogContent>
-          <DialogContentText>
-            {t("AddChainDialog")}
-          </DialogContentText>
+          <DialogContentText>{t("AddChainDialog")}</DialogContentText>
           <TextField
             autoFocus
             margin="dense"
@@ -44,16 +48,16 @@ const AddChain: React.FC<IProps> = (props: IProps) => {
             label={t("Chain Name")}
             type="text"
             fullWidth
-            onChange={(v) => setName(v.target.value) }
+            onChange={(v) => setName(v.target.value)}
           />
           <TextField
             margin="dense"
             id="network"
             label={t("Network")}
-            defaultValue="mainnet"
+            defaultValue="testnet"
             type="text"
             fullWidth
-            onChange={(v) => setNetwork(v.target.value) }
+            onChange={(v) => setNetwork(v.target.value)}
           />
           <TextField
             margin="dense"
@@ -61,15 +65,15 @@ const AddChain: React.FC<IProps> = (props: IProps) => {
             label={t("RPC Endpoint")}
             type="text"
             fullWidth
-            onChange={(v) => setRpc(v.target.value) }
+            onChange={(v) => setRpc(v.target.value)}
           />
         </DialogContent>
         <DialogActions>
           <Button onClick={props.onCancel} color="primary">
-          {t("Cancel")}
+            {t("Cancel")}
           </Button>
           <Button onClick={handleSubmit} color="primary">
-          {t("Save")}
+            {t("Save")}
           </Button>
         </DialogActions>
       </Dialog>
