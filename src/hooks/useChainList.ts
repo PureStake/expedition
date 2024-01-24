@@ -18,21 +18,20 @@ export default function () {
     {
       name: "Moonbeam",
       network: t("mainnet"),
-      rpc: ["https://rpc.api.moonbeam.network"],
+      rpc: ["https://moonbeam.unitedbloc.com/"],
     },
     {
       name: "Moonriver",
       network: t("mainnet"),
       rpc: [
-        "https://moonriver-api.bwarelabs.com/" +
-          process.env.REACT_APP_MOONRIVERAPI,
+        "https://moonriver.unitedbloc.com/"
       ],
     },
     {
       name: "MoonbaseAlpha",
       displayName: "Moonbase Alpha",
       network: t("testnet"),
-      rpc: ["https://rpc.api.moonbase.moonbeam.network"],
+      rpc: ["https://moonbase.unitedbloc.com"],
     },
     {
       name: "MoonbeamDevNode",
