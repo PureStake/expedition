@@ -12,8 +12,8 @@
     "url": "https://github.com/xops/expedition.git"
   },
   "scripts": {
-    "build": "react-scripts build && cp build/index.html build/404.html",
-    "start": "react-scripts start",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider react-scripts build && cp build/index.html build/404.html",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
     "test": "react-scripts test",
     "lint": "tslint -p tsconfig.json",
     "version": "cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]'"

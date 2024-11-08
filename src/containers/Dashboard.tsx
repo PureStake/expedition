@@ -26,7 +26,7 @@ import {
 const useState = React.useState;
 
 const config = {
-  blockTime: 12, // seconds
+  blockTime: 6, // seconds
   blockHistoryLength: 100,
   chartHeight: 200,
   chartWidth: 400,
