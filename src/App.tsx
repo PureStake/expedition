@@ -25,14 +25,13 @@ import Block from "./containers/Block";
 import Dashboard from "./containers/Dashboard";
 import NodeView from "./containers/NodeView";
 import Transaction from "./containers/Transaction";
-import { darkTheme } from "./themes/moonbeamTheme";
+import { darkTheme } from "./themes/polkadotTheme";
 import NotesIcon from "@material-ui/icons/Notes";
 import CodeIcon from "@material-ui/icons/Code";
-import PlaylistAddIcon from "@material-ui/icons/PlaylistAdd";
 import useInterval from "use-interval";
 import ETHJSONSpec from "@etclabscore/ethereum-json-rpc-specification/openrpc.json";
 import { useTranslation } from "react-i18next";
-import LanguageMenu from "./containers/LanguageMenu";
+//import LanguageMenu from "./containers/LanguageMenu";
 import { createBrowserHistory } from "history";
 import ChainDropdown from "./components/ChainDropdown/ChainDropdown";
 import {
@@ -43,12 +42,11 @@ import {
 import { createPreserveQueryHistory } from "./helpers/createPreserveHistory";
 import BlockRawContainer from "./containers/BlockRawContainer";
 import TransactionRawContainer from "./containers/TransactionRawContainer";
-import moonbeamLogo from "./explorer.png";
+import logo from "./explorer.png";
 import MinerStatsPage from "./containers/MinerStatsPage";
 import { IChain as Chain } from "./models/chain";
 import useChainListStore from "./stores/useChainListStore";
 import useEthRPCStore from "./stores/useEthRPCStore";
-import AddChain from "./components/AddChain/AddChain";
 import { NetworkWifi } from "@material-ui/icons";
 
 const history = createPreserveQueryHistory(createBrowserHistory, [
@@ -62,11 +60,12 @@ function App(props: any) {
   const theme = darkTheme;
 
   const [selectedChain, setSelectedChain] = useState<Chain>();
-  const [chains, setChains] = useChainListStore<[Chain[], Dispatch<Chain[]>]>();
+  const [chains /*, setChains*/] =
+    useChainListStore<[Chain[], Dispatch<Chain[]>]>();
   const [ethRPC, setEthRPCChain] = useEthRPCStore();
 
-  const [addChainDialogIsOpen, setAddChainDialogIsOpen] =
-    useState<boolean>(false);
+  /*const [addChainDialogIsOpen , setAddChainDialogIsOpen] =
+    useState<boolean>(false);*/
 
   // default the selectedChain once chain list loads
   useEffect(() => {
@@ -217,7 +216,7 @@ function App(props: any) {
     }
   };
 
-  const openAddChainModal = () => {
+  /*const openAddChainModal = () => {
     setAddChainDialogIsOpen(true);
   };
 
@@ -229,7 +228,7 @@ function App(props: any) {
     setAddChainDialogIsOpen(false);
     setChains(chains.concat(c));
     setSelectedChain(c);
-  };
+  };*/
 
   return (
     <Router history={history}>
@@ -262,12 +261,12 @@ function App(props: any) {
                         alt="expedition-logo"
                         height="30"
                         style={{ marginRight: "10px" }}
-                        src={moonbeamLogo}
+                        src={logo}
                       />
                     </Grid>
                     <Grid>
                       <Typography color="textSecondary" variant="h6">
-                        {t("Moonbeam Basic Explorer")}
+                        {t("Exp. AssetHub EVM Basic Explorer")}
                       </Typography>
                     </Grid>
                   </Grid>
@@ -317,16 +316,10 @@ function App(props: any) {
                     {!query.rpcUrl && <CircularProgress />}
                   </>
                 )}
-                <Tooltip title={t("Add Custom Chain") as string}>
-                  <IconButton onClick={openAddChainModal}>
-                    <PlaylistAddIcon />
-                  </IconButton>
-                </Tooltip>
-                <LanguageMenu />
-                <Tooltip title={t("Moonbeam Documentation") as string}>
+                <Tooltip title={t("Polkadot Documentation") as string}>
                   <IconButton
                     onClick={
-                      () => window.open("https://docs.moonbeam.network") //tslint:disable-line
+                      () => window.open("https://docs.polkadot.com") //tslint:disable-line
                     }
                   >
                     <NotesIcon />
@@ -335,7 +328,9 @@ function App(props: any) {
                 <Tooltip title={t("Github") as string}>
                   <IconButton
                     onClick={() =>
-                      window.open("https://github.com/PureStake/expedition")
+                      window.open(
+                        "https://github.com/papermoonio/expedition/tree/release/polkadot"
+                      )
                     }
                   >
                     <CodeIcon />
@@ -345,11 +340,6 @@ function App(props: any) {
             </Grid>
           </Toolbar>
         </AppBar>
-        <AddChain
-          open={addChainDialogIsOpen}
-          onCancel={cancelAddChainDialog}
-          onSubmit={submitAddChainDialog}
-        />
         <div style={{ margin: "0px 25px 0px 25px" }}>
           <QueryParamProvider ReactRouterRoute={Route}>
             <CssBaseline />

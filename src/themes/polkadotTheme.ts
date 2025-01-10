@@ -14,63 +14,63 @@ export const darkTheme = responsiveFontSizes(
     palette: {
       type: "dark",
       primary: {
-        light: "#53CBC9",
-        main: "#EA5AA2",
+        light: "#ff2670",
+        main: "#07ffff",
         dark: "#1E0E2D",
         contrastText: "#fff",
       },
       background: {
-        paper: "#E1147B",
+        paper: "#383bff",
       },
     },
     overrides: {
       MuiAppBar: {
         root: {
-          background: "#EA5AA2",
+          background: "#07ffff",
         },
       },
       MuiTextField: {
         root: {
           overflow: "visible !important",
-          color: "#E1147B ",
+          color: "#383bff ",
         },
       },
       MuiPaper: {
         root: {
           overflow: "visible !important",
-          color: "#EA5AA2",
+          color: "#07ffff",
           backgroundColor: "#000000",
         },
       },
       MuiTable: {
         root: {
-          color: "#53CBC9 visible !important",
+          color: "#ff2670 visible !important",
         },
       },
       MuiMenuItem: {
         root: {
-          color: "#52CBC9  !important",
+          color: "#ff2670  !important",
         },
       },
       MuiLink: {
         root: {
-          color: "linear-gradient(45deg, #E1147B 30%, #EA5AA2  90%)",
+          color: "linear-gradient(45deg, #383bff 30%, #07ffff  90%)",
         },
       },
       MuiTouchRipple: {
         root: {
-          color: "#53CBC9 visible !important",
+          color: "#ff2670 visible !important",
         },
       },
       MuiButton: {
         root: {
-          color: "#53CBC9  !important",
+          color: "#ff2670  !important",
         },
       },
       MuiTypography: {
         root: {
-          outlineStyle: "#53CBC9",
-          color: "#53CBC9",
+          outlineStyle: "#ff2670",
+          color: "#ff2670",
         },
       },
     },

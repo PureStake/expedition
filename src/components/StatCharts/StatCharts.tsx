@@ -52,7 +52,7 @@ const StatCharts: React.FC<IProps> = ({ blocks, victoryTheme }) => {
   const { t } = useTranslation();
   return (
     <Grid item container>
-      <Grid key="txChart" item xs={12} md={6} lg={3}>
+      <Grid key="txChart" item xs={12} md={6} lg={4}>
         <ChartCard title={t("Transaction Count")}>
           <VictoryChart
             height={config.chartHeight}
@@ -63,7 +63,7 @@ const StatCharts: React.FC<IProps> = ({ blocks, victoryTheme }) => {
           </VictoryChart>
         </ChartCard>
       </Grid>
-      <Grid key="gasUsed" item xs={12} md={6} lg={3}>
+      <Grid key="gasUsed" item xs={12} md={6} lg={4}>
         <ChartCard title={t("Gas Used (Millions)")}>
           <VictoryChart
             height={config.chartHeight}
@@ -74,7 +74,7 @@ const StatCharts: React.FC<IProps> = ({ blocks, victoryTheme }) => {
           </VictoryChart>
         </ChartCard>
       </Grid>
-      <Grid key="collators" item xs={12} md={6} lg={3}>
+      <Grid key="collators" item xs={12} md={6} lg={4}>
         <ChartCard title={t("Gas Used per Tx")}>
           <VictoryChart
             height={config.chartHeight}

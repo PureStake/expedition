@@ -16,28 +16,9 @@ export default function () {
   const { t } = useTranslation();
   const [chains, setChains] = React.useState<Chain[]>([
     {
-      name: "Moonbeam",
-      network: t("mainnet"),
-      rpc: ["https://moonbeam.unitedbloc.com/"],
-    },
-    {
-      name: "Moonriver",
-      network: t("mainnet"),
-      rpc: [
-        "https://moonriver.unitedbloc.com/"
-      ],
-    },
-    {
-      name: "MoonbaseAlpha",
-      displayName: "Moonbase Alpha",
+      name: "Westend AssetHub",
       network: t("testnet"),
-      rpc: ["https://moonbase.unitedbloc.com"],
-    },
-    {
-      name: "MoonbeamDevNode",
-      displayName: "Moonbeam Dev Node",
-      network: t("testnet"),
-      rpc: ["http://localhost:9944"],
+      rpc: ["https://westend-asset-hub-eth-rpc.polkadot.io/"],
     },
   ]);
 

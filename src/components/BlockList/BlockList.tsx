@@ -63,10 +63,12 @@ function BlockList({ blocks }: any) {
 
             // Shorten hash views by concatenating first and last 4 chars.
             const blockHashShort =
+              "0x" +
               b.hash.substring(2, 6) +
               "—" +
               b.hash.substring(b.hash.length - 5, b.hash.length - 1);
             const authorHashShort =
+              "0x" +
               b.miner.substring(2, 6) +
               "—" +
               b.miner.substring(b.miner.length - 5, b.miner.length - 1);

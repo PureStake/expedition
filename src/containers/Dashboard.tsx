@@ -2,22 +2,22 @@ import {
   Grid,
   Typography,
   CircularProgress,
-  Theme,
-  Button,
+  /*Theme,
+  Button,*/
 } from "@material-ui/core";
 import useEthRPCStore from "../stores/useEthRPCStore";
 import * as React from "react";
 import { weiToGwei } from "../components/formatters";
 import getBlocks, { useBlockNumber } from "../helpers";
 import useInterval from "use-interval";
-import { useTheme } from "@material-ui/styles";
-import getTheme from "../themes/victoryTheme";
+//import { useTheme } from "@material-ui/styles";
+//import getTheme from "../themes/victoryTheme";
 import ChartCard from "../components/ChartCard";
 import BlockListContainer from "./BlockList";
 import { hexToNumber } from "@etclabscore/eserialize";
 import { useTranslation } from "react-i18next";
-import { ArrowForwardIos } from "@material-ui/icons";
-import StatCharts from "../components/StatCharts";
+//import { ArrowForwardIos } from "@material-ui/icons";
+//import StatCharts from "../components/StatCharts";
 import {
   Block as IBlock,
   IsSyncingResult as ISyncing,
@@ -34,14 +34,13 @@ const config = {
 
 export default (props: any) => {
   const [erpc] = useEthRPCStore();
-  const theme = useTheme<Theme>();
-  const victoryTheme = getTheme(theme);
+  //const theme = useTheme<Theme>();
+  //const victoryTheme = getTheme(theme);
   const [blockNumber] = useBlockNumber(erpc);
   const [chainId, setChainId] = useState<string>();
   const [blocks, setBlocks] = useState<IBlock[]>();
   const [gasPrice, setGasPrice] = useState<string>();
   const [syncing, setSyncing] = useState<ISyncing>();
-  const [peerCount, setPeerCount] = useState<string>();
 
   const { t } = useTranslation();
 
@@ -100,22 +99,10 @@ export default (props: any) => {
     if (!erpc) {
       return;
     }
-    erpc.net_peerCount().then(setPeerCount);
-  }, [erpc]);
-
-  React.useEffect(() => {
-    if (!erpc) {
-      return;
-    }
     erpc.eth_gasPrice().then(setGasPrice);
   }, [erpc]);
 
-  if (
-    blocks === undefined ||
-    chainId === undefined ||
-    gasPrice === undefined ||
-    peerCount === undefined
-  ) {
+  if (blocks === undefined || chainId === undefined || gasPrice === undefined) {
     return <CircularProgress />;
   }
 
@@ -152,15 +139,10 @@ export default (props: any) => {
               </Typography>
             </ChartCard>
           </Grid>
-          <Grid key="peers" item>
-            <ChartCard title={t("Peers")}>
-              <Typography variant="h4">{hexToNumber(peerCount)}</Typography>
-            </ChartCard>
-          </Grid>
         </Grid>
       </Grid>
-      <StatCharts victoryTheme={victoryTheme} blocks={blocks} />
-      <Grid container justify="flex-end">
+      {/* <StatCharts victoryTheme={victoryTheme} blocks={blocks} /> */}
+      {/*<Grid container justify="flex-end">
         <Button
           color="primary"
           variant="outlined"
@@ -169,9 +151,8 @@ export default (props: any) => {
         >
           {t("More Stats")}
         </Button>
-      </Grid>
+      </Grid>*/}
       <br />
-
       <BlockListContainer
         from={Math.max(blockNumber - 14, 0)}
         to={blockNumber}

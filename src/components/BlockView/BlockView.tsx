@@ -109,7 +109,7 @@ function BlockView(props: any) {
           </TableRow>
 
           <TableRow>
-            <TableCell>{t("Collator")}</TableCell>
+            <TableCell>{t("Author")}</TableCell>
             <TableCell>
               <Link
                 component={({
